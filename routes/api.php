@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\JiraWebhookController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,7 +19,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/webhook/jira', 'JiraWebhookController@handle');
+Route::post('/webhook/jira', [JiraWebhookController::class, 'index'])->name('webhook.jira');
 
 Route::get('/webhook', function(Request $request) {
     return response()->json('pong 🏓');

@@ -32,7 +32,7 @@ return [
     | your default bot for regular use.
     |
     */
-    'default' => 'webHooks',
+    'default' => 'mybot',
 
     /*
     |--------------------------------------------------------------------------
